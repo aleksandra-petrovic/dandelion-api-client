@@ -1,0 +1,44 @@
+<style>
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+    .masterdiv {
+        padding: 70px 70px;
+        text-align: center;
+    }
+</style>
+
+<div class="jumbotron text-center">
+    <h1>language detection page</h1> 
+</div>
+<div class="masterdiv">    
+    <form (submit)="submitText()" class="mb-5">
+        <div class="form-group">
+            <p>insert text</p>
+            <input type="text" class="form-control" id="text" placeholder="text" name="text" [(ngModel)]="text">
+        </div>
+        <br />
+        <div class="inline-div">
+            <p>clean</p>
+            <input type="checkbox" class="form-control" id="clean" name="clean" [(ngModel)]="clean">
+        </div>
+        <br />
+        <br />
+        <div class="container-4">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+<br />
+<br />
+<br />
+<br />
+<h3>results</h3>
+    <div *ngFor="let ld of DLResponse.detectedLangs">
+        <p>{{ ld.lang }}</p>
+        <p>{{ ld.confidence }}</p>
+    </div>
+</div>

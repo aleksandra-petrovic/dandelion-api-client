@@ -1,0 +1,38 @@
+<style>
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+    .masterdiv {
+        padding: 70px 70px;
+        text-align: center;
+    }
+</style>
+
+<div class="masterdiv">
+<div class="jumbotron text-center">
+    <h1>configuration page</h1>
+    <p>here you can insert your token to start your session or modify your token</p> 
+</div>
+
+<div class="container-1">
+    <form (submit)="setToken()" class="mb-5">
+        <div class="form-group mb-2">
+          <label for="name">your token:</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="type..." [(ngModel)]="token">
+        </div>
+        <div class="form-group mb-2">
+            <label for="name">change your token:</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="type..." [(ngModel)]="token">
+        </div>
+  
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<br />
+<br />
+<label>my token : 20f7504f48c446a6a404ed5aba2f598a</label>
+</div>

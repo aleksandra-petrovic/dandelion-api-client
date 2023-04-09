@@ -1,0 +1,64 @@
+<style>
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+.masterdiv {
+        padding: 70px 70px;
+        text-align: center;
+}
+</style>
+
+<div class="jumbotron text-center">
+    <h1>sentiment analysis page</h1> 
+</div>
+  
+<div class="masterdiv">
+	<form (submit)="submitText()" class="mb-5">
+        <div class="form-group">
+            <p>insert text</p>
+            <input type="text" class="form-control" id="text" placeholder="text" name="text" [(ngModel)]="text">
+        </div>
+        <br />
+        <div class="inline-div">
+            <p>en</p>
+            <input type="radio" class="form-control" id="en" name="en" value="en" [(ngModel)]="lang">
+			<p>it</p>
+            <input type="radio" class="form-control" id="it" name="it" value="it" [(ngModel)]="lang">
+			<p>auto</p>
+            <input type="radio" class="form-control" id="auto" name="auto" value="auto" [(ngModel)]="lang">
+        </div>
+        <br />
+        <br />
+        <div class="container-4">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+<br />
+<br />
+<h3>results</h3>
+    <div>
+        <h4>{{ SAResponse.sentiment?.score }}</h4>
+        <h1 [style]="typeColor" > {{ SAResponse.sentiment?.type }}</h1>
+
+        <!--
+		<div *ngIf=" SAResponse.sentiment?.type == 'positive'; then thenBlock else elseBlock"></div>
+		<ng-template #thenBlock><p style="color:rgb(79, 248, 0);">positive</p></ng-template>
+		<ng-template #elseBlock>
+			<div *ngIf=" SAResponse.sentiment?.type == 'neutral'; then thenBlock1 else elseBlock1"></div>
+			<ng-template #thenBlock1><p style="color:rgb(126, 98, 6);">neutral</p></ng-template>
+			<ng-template #elseBlock1>
+				<div *ngIf=" SAResponse.sentiment?.type == 'negative'; then thenBlock2 else elseBlock2"></div>
+				<ng-template #thenBlock2><p style="color:rgb(255, 7, 7);">negative</p></ng-template>
+				<ng-template #elseBlock2></ng-template>
+			</ng-template>
+		</ng-template>	
+    -->	
+
+    </div>
+<br />
+<br />
+</div>

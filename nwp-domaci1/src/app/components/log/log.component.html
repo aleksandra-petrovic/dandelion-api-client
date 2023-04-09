@@ -1,0 +1,20 @@
+<style>
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+    .masterdiv {
+        padding: 70px 70px;
+        text-align: center;
+    }
+</style>
+
+<div class="masterdiv">
+    <h2>history</h2>
+    <div *ngFor="let r of requests">
+        <p>[{{date | date:"dd.MM.YYYY."}} {{date | date:"HH:mm:ss"}}] GET {{ r }}</p>
+    </div>
+</div>
